@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav>
+        <ul class="nav-list">
+            <li><a class="a-white" href="registration.html">Sign Up</a></li>
+            <li><a class="a-white" href="authorisation.html">Log In</a></li>
+            <li><a class="a-white" href="search.html">Search</a></li>
+        </ul>
+    </nav>
+
+    <form action="https://tests.fomenko.top/echo/index.php" method="get">
+        <header class="main-header">
+            <p>Log in to your account</p>
+        </header>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" placeholder="Enter your email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required autocomplete="on">
+
+        <div class="mb30 ">
+            <input type="checkbox" name="rememberMe" id="rememberMe" value="lsRememberMe">
+            <label for="rememberMe">Remember me</label>
+        </div>
+
+        <button type="submit" onclick="lsRememberMe()">Log in</button>
+
+        <div class="smaller-text">
+            <a href="#">Forgot password?</a>
+        </div>
+
+        <div class="smaller-text">
+            <p class="inline">Don't have an account?</p>
+            <a href="registration.html">Sign Up</a>
+        </div>
+    </form>
+
+    <script>
+        const rmCheck = document.getElementById("rememberMe"),
+            emailInput = document.getElementById("email");
+
+        if (localStorage.checkbox && localStorage.checkbox !== "") {
+            rmCheck.setAttribute("checked", "checked");
+            emailInput.value = localStorage.username;
+        } else {
+            rmCheck.removeAttribute("checked");
+            emailInput.value = "";
+        }
+
+        function lsRememberMe() {
+            if (rmCheck.checked && emailInput.value !== "") {
+                localStorage.username = emailInput.value;
+                localStorage.checkbox = rmCheck.value;
+            } else {
+                localStorage.username = "";
+                localStorage.checkbox = "";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

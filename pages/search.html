@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav>
+        <ul class="nav-list">
+            <li><a class="a-white" href="registration.html">Sign Up</a></li>
+            <li><a class="a-white" href="authorisation.html">Log In</a></li>
+            <li><a class="a-white" href="search.html">Search</a></li>
+        </ul>
+    </nav>
+
+    <form action="https://tests.fomenko.top/echo/index.php" method="get">
+        <header class="main-header">
+            <p>Search for a car</p>
+        </header>
+
+        <label for="body-style">Body style</label>
+        <select name="body-style" id="body-style">
+            <option value="all body styles">All body styles</option>
+            <option value="hatchback">Hatchback</option>
+            <option value="cargo_van">Cargo van</option>
+            <option value="pickup_truck">Pickup truck</option>
+            <option value="sedan">Sedan</option>
+        </select>
+
+        <label for="make">Make</label>
+        <select name="make" id="make">
+            <option value="all makes">All makes</option>
+            <option value="audi">Audi</option>
+            <option value="bmw">BMW</option>
+            <option value="chevrolet">Chevrolet</option>
+            <option value="lexus">Lexus</option>
+        </select>
+
+        <label for="country">Country of manufacture</label>
+        <select name="country" id="country">
+            <option value="all countries">All countries</option>
+            <option value="china">China</option>
+            <option value="us">United States</option>
+            <option value="japan">Japan</option>
+            <option value="india">India</option>
+        </select>
+
+        <label for="fuel">Type of Fuel</label>
+        <select name="fuel" id="fuel">
+            <option value="all fuel types">All fuel types</option>
+            <option value="gasoline">Gasoline</option>
+            <option value="diesel_fuel">Diesel Fuel</option>
+            <option value="bio-diesel">Bio-diesel</option>
+            <option value="ethanol">Ethanol</option>
+        </select>
+
+        <label for="gearbox">Type of Gearbox</label>
+        <select name="gearbox" id="gearbox">
+            <option value="all gearbox types">All gearbox types</option>
+            <option value="concentric">Concentric</option>
+            <option value="parallel">Parallel</option>
+            <option value="right_angle">Right angle</option>
+        </select>
+
+
+        <div class="rec">
+            <div class="below">
+                <fieldset>
+                    <legend>Color</legend>
+
+                    <div>
+                        <input type="radio" name="color" id="color-red" value="red" checked>
+                        <label for="color-red">Red</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="color" id="color-blue" value="blue">
+                        <label for="color-blue">Blue</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="color" id="color-yellow" value="yellow">
+                        <label for="color-yellow">Yellow</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="color" id="color-white" value="white">
+                        <label for="color-white">White</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="color" id="color-black" value="black">
+                        <label for="color-black">Black</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="color" id="color-orange" value="orange">
+                        <label for="color-orange">Orange</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="color" id="color-gray" value="gray">
+                        <label for="color-gray">Gray</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="color" id="color-green" value="green">
+                        <label for="color-green">Green</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="color" id="color-brown" value="brown">
+                        <label for="color-brown">Brown</label>
+                    </div>
+
+                </fieldset>
+            </div>
+
+            <div class="below">
+                <fieldset>
+                    <legend>New/used</legend>
+
+                    <div>
+                        <input type="checkbox" name="new" id="new">
+                        <label for="new">New</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="used" id="used">
+                        <label for="used">Used</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="certified" id="certified">
+                        <label for="certified">Certified</label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Comfort</legend>
+
+                    <div>
+                        <input type="checkbox" name="hatch" id="hatch">
+                        <label for="hatch">Hatch</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="leather_interior" id="leather_interior">
+                        <label for="leather_interior">Leather interior</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="baby_carseat" id="baby_carseat">
+                        <label for="baby_carseat">Baby carseat</label>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="rec mb10">
+            <fieldset class="long">
+                <legend>Price Range</legend>
+
+                <div class="price">
+                    <div>
+                        <label for="min-price">Min</label>
+                        <input type="number" id="min-price" min="1000" max="49999" value="1000">
+                    </div>
+
+                    <div class="divider">-</div>
+
+                    <div>
+                        <label for="max-price">Max</label>
+                        <input type="number" id="max-price" min="1001" max="50000" value="50000">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="long">
+                <legend>Year of manufacture</legend>
+
+                <div class="price">
+                    <div>
+                        <label for="min-year">From</label>
+                        <input type="number" id="min-year" min="1900" max="2021" value="1900">
+                    </div>
+
+                    <div class="divider">-</div>
+
+                    <div>
+                        <label for="max-year">To</label>
+                        <input type="number" id="max-year" min="1901" max="2022" value="2022">
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <button type="submit">Search</button>
+
+    </form>
+
+</body>
+
+</html>

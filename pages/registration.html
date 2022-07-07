@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav>
+        <ul class="nav-list">
+            <li><a class="a-white" href="registration.html">Sign Up</a></li>
+            <li><a class="a-white" href="authorisation.html">Log In</a></li>
+            <li><a class="a-white" href="search.html">Search</a></li>
+        </ul>
+    </nav>
+
+    <form action="https://tests.fomenko.top/echo/index.php" method="get">
+        <header class="main-header">
+            <p>Sign Up</p>
+        </header>
+
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" placeholder="Enter your name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" placeholder="Enter your email" required>
+
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" min="1" max="200" step="1" placeholder="Age">
+
+        <label for="phone">Phone:</label>
+        <input type="tel" name="phone" id="phone" placeholder="Enter your phone number">
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" minlength="8" required>
+
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" name="confirm_password" id="confirm_password" required>
+
+        <div class="mb30">
+            <input type="checkbox" name="terms" id="terms" required>
+            <label for="terms">I agree with the <a href="#">terms of services</a></label>
+        </div>
+
+        <button type="submit">Sign up</button>
+
+        <div class="smaller-text">
+            <p class="inline">Already a member?</p>
+            <a href="authorisation.html">Log in here</a>
+        </div>
+
+    </form>
+    <script>
+        var password = document.getElementById("password")
+            , confirm_password = document.getElementById("confirm_password");
+
+        function validatePassword() {
+            if (password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Passwords Don't Match");
+            } else {
+                confirm_password.setCustomValidity('');
+            }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+    </script>
+
+</body>
+
+</html>
